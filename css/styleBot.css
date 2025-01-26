@@ -369,4 +369,8 @@ input[type="file"] {
   #elements-in-action-buttons>p:nth-child(3)>span{
     width: 100%;
   }
+
+  #chat-input{
+    font-size: 16px!important;
+  }
 }
