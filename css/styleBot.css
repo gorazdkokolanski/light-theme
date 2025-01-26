@@ -348,10 +348,10 @@ input[type="file"] {
   }
 
   .sidebar-wrapper{
-    max-height: 90dvh;
   }
 
   .sidebar-wrapper>div:last-child{
+    margin-bottom: 40px;
   }
 
   #elements-in-action-buttons{
