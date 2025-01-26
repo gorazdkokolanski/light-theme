@@ -352,7 +352,6 @@ input[type="file"] {
 
   .sidebar-wrapper>div:last-child{
     margin-bottom: 20px;
-    position: relative;
     z-index: 300;
     opacity: 1;
     display: flex;
