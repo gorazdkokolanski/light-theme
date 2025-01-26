@@ -1,11 +1,13 @@
 /* Import Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 :root {
   --text-color: #FFFFFF;
   --icon-color: #ACACBE;
@@ -16,6 +18,7 @@
   --outgoing-chat-border: #64656d;
   --incoming-chat-border: #444654;
 }
+
 .light-mode {
   --text-color: #343541;
   --icon-color: #a9a9bc;
@@ -26,6 +29,7 @@
   --outgoing-chat-border: #FFFFFF;
   --incoming-chat-border: #D9D9E3;
 }
+
 body {
   background: var(--outgoing-chat-bg);
 }
@@ -36,6 +40,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .chat-container {
   overflow-y: auto;
   flex-grow: 1;
@@ -46,10 +51,12 @@ body {
 :where(.chat-container, textarea)::-webkit-scrollbar {
   width: 6px;
 }
+
 :where(.chat-container, textarea)::-webkit-scrollbar-track {
   background: var(--incoming-chat-bg);
   border-radius: 25px;
 }
+
 :where(.chat-container, textarea)::-webkit-scrollbar-thumb {
   background: var(--icon-color);
   border-radius: 25px;
@@ -61,24 +68,29 @@ body {
   justify-content: center;
   color: var(--text-color);
 }
+
 .chat-container .chat.outgoing {
   background: var(--outgoing-chat-bg);
   border: 1px solid var(--outgoing-chat-border);
 }
+
 .chat-container .chat.incoming {
   background: var(--incoming-chat-bg);
   border: 1px solid var(--incoming-chat-border);
 }
+
 span.material-symbols-rounded {
   user-select: none;
   cursor: pointer;
 }
+
 .chat .chat-content span {
   cursor: pointer;
   font-size: 1.3rem;
   color: var(--icon-color);
   visibility: hidden;
 }
+
 .chat:hover .chat-content:not(:has(.typing-animation), :has(.error)) span {
   visibility: visible;
 }
@@ -90,18 +102,22 @@ span.material-symbols-rounded {
   object-fit: cover;
   border-radius: 2px;
 }
+
 .chat .chat-details p {
   white-space: pre-wrap;
   padding: 0 50px 0 25px;
   word-break: break-word;
 }
+
 .chat .chat-details p.error {
   color: #e55865;
 }
+
 .chat .typing-animation {
   padding-left: 25px;
   display: inline-flex;
 }
+
 .typing-animation .typing-dot {
   height: 7px;
   width: 7px;
@@ -111,17 +127,21 @@ span.material-symbols-rounded {
   background: var(--text-color);
   animation: animateDots 1.5s var(--delay) ease-in-out infinite;
 }
+
 .typing-animation .typing-dot:first-child {
   margin-left: 0;
 }
+
 @keyframes animateDots {
-  0%,44% {
+  0%, 44% {
     transform: translateY(0px);
   }
+
   28% {
     opacity: 0.4;
     transform: translateY(-6px);
   }
+
   44% {
     opacity: 0.2;
   }
@@ -137,9 +157,11 @@ span.material-symbols-rounded {
   resize: none;
   max-height: 250px;
 }
+
 .typing-textarea textarea::placeholder {
   color: var(--placeholder-color);
 }
+
 .typing-content span {
   width: 55px;
   /* height: 55px; */
@@ -150,13 +172,15 @@ span.material-symbols-rounded {
   justify-content: center;
   color: var(--icon-color);
 }
+
 .typing-textarea span {
   position: absolute;
   right: 0;
   bottom: 0;
   visibility: visible;
 }
-.typing-textarea textarea:valid ~ span {
+
+.typing-textarea textarea:valid~span {
   visibility: visible;
 }
 
@@ -167,11 +191,13 @@ span.material-symbols-rounded {
 }
 
 .typing-textarea {
-  position: relative; /* to ensure absolute positioning inside it works properly */
+  position: relative;
+  /* to ensure absolute positioning inside it works properly */
 }
 
 #chat-input {
-  padding-right: calc(20px + 32px); /* Assuming 32px is the width of the send button + margin */
+  padding-right: calc(20px + 32px);
+  /* Assuming 32px is the width of the send button + margin */
 }
 
 #send-btn {
@@ -187,6 +213,7 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+
 th, td {
   padding: 8px;
   text-align: left;
@@ -207,81 +234,135 @@ th, td {
 }
 
 /* side bar */
-.menu-list-wrap:hover .menu-list-btn-wrap{
+.menu-list-wrap:hover .menu-list-btn-wrap {
   display: block;
-  }
-.hide-sidbar-btn{
+}
+
+.hide-sidbar-btn {
   transform: rotate(180deg);
 }
-.sidebar-wrapper {        
-  scrollbar-width: none;  
-  transition-duration: 0.4s; 
+
+.sidebar-wrapper {
+  scrollbar-width: none;
+  transition-duration: 0.4s;
   z-index: 9999;
 }
+
 .sidebar-wrapper::-webkit-scrollbar {
-  display: none;           
+  display: none;
 }
-.sidebar-wrapper-position{
+
+.sidebar-wrapper-position {
   margin-left: -256px;
 }
-.display-btn-sidbar{
-display: none;
+
+.display-btn-sidbar {
+  display: none;
 }
 
 /* Reponsive Media Query */
 @media screen and (max-width: 776px) {
-  .sidbar-responsive{
+  .sidbar-responsive {
     margin-left: -256px;
   }
-  .display-btn-sidbar{
+
+  .display-btn-sidbar {
     display: block;
-    }
+  }
 }
+
 @media screen and (max-width: 600px) {
   .default-text h1 {
     font-size: 2.3rem;
   }
+
   :where(.default-text p, textarea, .chat p) {
-    font-size: 0.95rem!important;
+    font-size: 0.95rem !important;
   }
-  .chat-container{
+
+  .chat-container {
     height: 100%;
     padding-bottom: auto;
     padding-left: 12px;
     padding-right: 12px;
     padding-top: 10px;
   }
+
   .chat-container .chat {
     padding: 20px 10px;
   }
+
   .chat-container .chat img {
     height: 32px;
     width: 32px;
   }
+
   .chat-container .chat p {
     padding: 0 20px;
   }
+
   .chat .chat-content:not(:has(.typing-animation), :has(.error)) span {
     visibility: visible;
   }
+
   .typing-container {
     padding: 15px 10px;
   }
+
   .typing-textarea textarea {
     height: 45px;
     padding: 10px 40px 10px 10px;
   }
+
   .typing-content span {
     height: 45px;
     width: 45px;
     margin-left: 5px;
   }
+
   span.material-symbols-rounded {
-    font-size: 1.25rem!important;
+    font-size: 1.25rem !important;
   }
 }
 
 
-input[type="file"]{
+input[type="file"] {
   display: none;
+}
+
+
+/* Gorazd CSS */
+
+@media only screen and (max-width: 768px) {
+  body {
+    max-height: 100dvh;
+    overflow: hidden;
+  }
+
+  body .chat-container-main {
+    min-height: 100dvh !important;
+  }
+
+  .sidebar-gorazd {
+    max-height: 90dvh;
+  }
+
+  .sidebar-wrapper{
+    max-height: 90dvh;
+  }
+
+  .sidebar-wrapper>div:last-child{
+  }
+
+  #elements-in-action-buttons{
+    gap: 10px!important;
+  }
+
+  #buyButton, #elements-in-action-buttons>p:nth-child(3), #buttonFeedback, #buttonShareChat{
+    width: calc(50% - 5px)!important;
+  }
+
+  #elements-in-action-buttons>p:nth-child(3)>span{
+    width: 100%;
+  }
 }
