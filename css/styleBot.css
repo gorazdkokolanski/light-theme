@@ -351,11 +351,13 @@ input[type="file"] {
   }
 
   .sidebar-wrapper>div:last-child{
-    margin-bottom: 80px;
     z-index: 300;
     opacity: 1;
     display: flex;
     position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+    bottom: unset;
   }
 
   #elements-in-action-buttons{
